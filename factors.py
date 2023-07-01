@@ -19,6 +19,13 @@ for line in lines:
 
         for j in range(front, last):
             mod = (front + last) // 2
+            if num % mod != 0:
+                if i * mod <= num:
+                    front = mod + 1
+                else:
+                    last = mod - 1
+                continue
+
             if i * mod == num:
                 print(f"{num}={mod}*{i}")
                 found = 1
